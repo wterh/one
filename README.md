@@ -1,49 +1,54 @@
-# onecore - The single file CMS
+# One - The single file Blog
 
-onecore consists of one single file which contains the onecore-source (PHP 5)
-and the content of the website, too. Imagine, you have one HTML site - a manual,
-a frontpage, a linklist or something like that - and you want to edit this page
-without any external editor. Then onecore is perfect for you. Onecore is HTML
-page and content in one file.
+"One" consists of one single file that contains everything you need to create and manage your blog. Imagine you want a simple blog, without extra features, settings and fiddly stuff,
+a homepage, a list of posts, likes, views or anything like that - and you just want to share information. Then One is the perfect option for you. "One" is a blog and a dashboard in one.
 
-Note that onecore is mostly a proof of concept and by no means secure.
+Note that "One" is mostly an experimental tool designed to make it quick and easy to organize the distribution of information.
 
 ## Features
-
-* Administration area
-* Password protection (optional)
-* Configuration form
-* Import / Export functionality
-* Editor which supports tabs
-* JavaScript preview
+- [x] Administration panel
+- [ ] SEO friendly
+- [ ] Large configurations
+- [ ] Import / Export posts
+- [ ] Endless post viewer
+- [ ] Supports multiple methods of information storage
+- [ ] Localization
+- [ ] Views
+- [ ] Likes
+- [ ] Comments
+- [ ] Share
 
 ## Technology & requirements
 
-Onecore is an HTML site containing some PHP and JavaScript which make it
-possible to edit the HTML part of the site without any additional tool.
+"One" is a website that contains some PHP and JavaScript code that allows you to create, manage and view blog posts.
 
 ### Server requirements
 
 - PHP 5+
-- Write permisions for PHP on the file
+- Write permisions for PHP on the file (0755)
 
 ### Client requirements
 
-- Web browser (of course)
-- JavaScript support
-
-## News
-- 2010-10-12 Version 1.0.0 stable released
-- 2007-07-31 Version 0.1.0 beta b005 released
+- Any Web browser (Desktop, Tablet, Phone)
 
 ## Installation
 
-To install onecore, simply copy it to a directory inside your web root and name
-it as you want. Make sure that the file extension tells your webserver to
-activate PHP. Important is the write permission for PHP respective the webserver
-on this file.
+To install "One", simply copy it to a directory at the root of your site.
 
-After that, launch onecore (https://yoursite.com/onecoreFileName.extension).
+After that, launch "One" (https://sitename.com/).
 
-Now you see a HTML-Page with sample content. To open the administration
-area, simply go to https://yoursite.com/onecoreFileName.extension?admin.
+Now you see the Home Page with your simple and personalized blog. To open the admin panel, just go to:
+
+`Apache` - https://sitename.com/?admin
+
+`Nginx` - https://sitename.com/admin
+
+For Nginx you need to specify a location leading all requests to "One"
+```nginx
+location / {
+         index index.php index.html;
+         try_files $uri $uri/ /index.php?$args;
+}
+```
+
+On first launch you will see the "One" configurator, it will help you customize your blog to your needs.
